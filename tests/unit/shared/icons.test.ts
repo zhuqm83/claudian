@@ -1,6 +1,7 @@
 /** @jest-environment jsdom */
 
 import {
+  CODEBUDDY_PROVIDER_ICON,
   createProviderIconSvg,
   OPENAI_PROVIDER_ICON,
   OPENCODE_PROVIDER_ICON,
@@ -51,6 +52,18 @@ describe('createProviderIconSvg', () => {
     const paths = Array.from(svg.querySelectorAll('path'));
     expect(paths).toHaveLength(2);
     expect(paths[0].getAttribute('fill-rule')).toBe('evenodd');
+    expect(paths.every(path => path.getAttribute('fill') === 'currentColor')).toBe(true);
+  });
+
+  it('renders the CodeBuddy provider icon as a currentColor composite mark', () => {
+    const svg = createProviderIconSvg(CODEBUDDY_PROVIDER_ICON, {
+      dataProvider: 'codebuddy',
+      parent: document.body,
+    });
+
+    expect(svg.getAttribute('viewBox')).toBe('0 0 24 24');
+    const paths = Array.from(svg.querySelectorAll('path'));
+    expect(paths).toHaveLength(2);
     expect(paths.every(path => path.getAttribute('fill') === 'currentColor')).toBe(true);
   });
 });

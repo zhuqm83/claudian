@@ -93,6 +93,28 @@ export const GROK_PROVIDER_ICON: ProviderIconSvg = {
   path: 'M3.25 3h4.18l4.8 6.64L17.88 3h3.17l-7.36 8.65L20.44 21h-4.18l-5.16-7.14L5.02 21H1.85l7.79-9.16L3.25 3Zm3.03 1.7 10.85 14.6h1.28L7.56 4.7H6.28Z',
 };
 
+export const CODEBUDDY_PROVIDER_ICON: ProviderIconSvg = {
+  kind: 'composite',
+  viewBox: '0 0 24 24',
+  children: [
+    {
+      tag: 'path',
+      attributes: {
+        d: 'M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm1 2v14h14V5H5Z',
+        fill: 'currentColor',
+        'fill-rule': 'evenodd',
+      },
+    },
+    {
+      tag: 'path',
+      attributes: {
+        d: 'M9.9 8.2 13.7 12l-3.8 3.8 1.4 1.4L16.5 12l-5.2-5.2Z',
+        fill: 'currentColor',
+      },
+    },
+  ],
+};
+
 export interface CreateProviderIconSvgOptions {
   className?: string;
   dataProvider?: string;

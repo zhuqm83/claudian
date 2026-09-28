@@ -1,6 +1,7 @@
 import { ProviderRegistry } from '../core/providers/ProviderRegistry';
 import { ProviderWorkspaceRegistry } from '../core/providers/ProviderWorkspaceRegistry';
 import { claudeProviderRegistration } from './claude/registration';
+import { codeBuddyProviderRegistration } from './codebuddy/registration';
 import { codexProviderRegistration } from './codex/registration';
 import { grokProviderRegistration } from './grok/registration';
 import { opencodeProviderRegistration } from './opencode/registration';
@@ -14,6 +15,7 @@ export const BUILT_IN_PROVIDER_MODULES = [
   grokProviderRegistration,
   opencodeProviderRegistration,
   piProviderRegistration,
+  codeBuddyProviderRegistration,
 ] as const;
 
 export function registerBuiltInProviders(): void {
